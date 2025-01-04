@@ -1,0 +1,13 @@
+
+
+/*
+module "peering_routes_vpc_b_to_vpc_a" {
+  source = "./routes_peering"
+  private_route_table_id = module.vpc_b.private_route_table_id
+  cidr_block = module.vpc_a.cidr_block
+  peering_connection_id = module.peering_vpc_b_to_vpc_a.peering_connection_id
+  providers = {
+    aws = aws.us_west_1
+  }
+}
+*/

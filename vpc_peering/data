@@ -1,0 +1,23 @@
+# Get account and region info
+data "aws_caller_identity" "this" {
+  provider = aws.us_west_2
+}
+data "aws_region" "this" {
+  provider = aws.us_west_2
+}
+data "aws_caller_identity" "peer" {
+  provider = aws.us_west_1
+}
+data "aws_region" "accepter_region" {
+  provider = aws.us_west_1
+}
+
+# Get vpc info
+data "aws_vpc" "requester_vpc_id" {
+  provider = aws.us_west_2
+  id       = var.requester_vpc_id
+}
+data "aws_vpc" "accepter_vpc_id" {
+  provider = aws.us_west_1
+  id       = var.requester_vpc_id
+}
